@@ -1,0 +1,75 @@
+.cartao {
+    background-color: rgba(59, 46, 90, 0.8); /* Cor de fundo para os cartões */
+    border-radius: 12px;
+    border: 2px solid var(--card-border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 16px;
+    cursor: pointer;
+    perspective: 1000px; /* Garantir que a perspectiva seja aplicada ao container */
+    height: 200px; /* Definir uma altura fixa para os cartões */
+  }
+  
+  .cartao:hover {
+    transform: scale(1.03); /* Efeito de zoom */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+  }
+  
+  .cartao__conteudo {
+    background-color: rgba(59, 46, 90, 0.9); /* Fundo mais escuro para dar destaque */
+    border-radius: 12px;
+    padding: 16px;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    position: relative;
+  }
+  
+  /* Aplica a rotação para virada do cartão */
+  .cartao:hover .cartao__conteudo {
+    transform: rotateY(180deg); /* Gira o cartão para mostrar a resposta */
+  }
+  
+  .cartao__conteudo h3 {
+    color: var(--highlight-color);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Ocultar a pergunta quando o cartão for girado */
+  .cartao__conteudo__pergunta {
+    backface-visibility: hidden; /* Não mostra a parte de trás do cartão */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* A parte de resposta que ficará visível */
+  .cartao__conteudo__resposta {
+    background-color: rgba(212, 175, 55, 0.1);
+    transform: rotateY(180deg); /* Inicialmente escondida, depois gira ao hover */
+    font-weight: bold;
+    color: var(--card-back-color);
+    padding: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  footer {
+    margin-top: 40px;
+    color: #ccc;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  

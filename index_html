@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards - Espaço e Astronomia</title>
+  <style>
+    :root {
+      --text-color: #fdf6d8;
+      --background-color: #1b1a2d;
+      --highlight-color: #d4af37;
+      --card-front-color: #3b2e5a;
+      --card-back-color: #d4af37;
+    }
+
+    body {
+      background: url('assets/img/space.jpg');
+      background-size: cover;
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .cartao {
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .cartao__conteudo {
+      background-color: rgba(59, 46, 90, 0.9);
+      border-radius: 12px;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      border: 1px solid var(--highlight-color);
+    }
+
+    .cartao:hover .cartao__conteudo {
+      transform: rotateY(180deg);
+    }
+
+    .cartao__conteudo__pergunta,
+    .cartao__conteudo__resposta {
+      backface-visibility: hidden;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .cartao__conteudo__pergunta {
+      color: var(--text-color);
+    }
+
+    .cartao__conteudo__resposta {
+      background-color: rgba(212, 175, 55, 0.1);
+      color: var(--card-back-color);
+      transform: rotateY(180deg);
+      font-weight: bold;
+    }
+
+    .cartao__conteudo__pergunta h3,
+    .cartao__conteudo__resposta h3 {
+      font-size: 1rem;
+      margin: 0;
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
+      text-align: right;
+      border-bottom: 1px solid var(--highlight-color);
+      color: var(--highlight-color);
+    }
+
+    .cartao__conteudo__pergunta p,
+    .cartao__conteudo__resposta p {
+      padding: 1rem;
+      font-size: 1rem;
+      text-align: right;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 2rem;
+      z-index: 10;
+    }
+
+    footer p {
+      text-align: center;
+      font-size: 0.6rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <section id="container">
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Qual é o planeta mais próximo do Sol?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Mercúrio.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Qual é o maior planeta do Sistema Solar?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Júpiter.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Qual é o nome da galáxia onde a Terra está localizada?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Via Láctea.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>O que é uma estrela cadente?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Uma estrela cadente é um meteoro queimando na atmosfera da Terra.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Quantos planetas existem no Sistema Solar?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Existem 8 planetas no Sistema Solar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Quem foi o primeiro homem a pisar na Lua?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Neil Armstrong.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>O que é uma supernova?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Uma supernova é a explosão de uma estrela no final de seu ciclo de vida.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>O que é a Via Láctea?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>A Via Láctea é a galáxia onde o nosso sistema solar está localizado.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
+          <h3>Espaço e Astronomia</h3>
+          <p>Qual é o maior satélite natural da Terra?</p>
+        </div>
+        <div class="cartao__conteudo__resposta">
+          <h3>Espaço e Astronomia</h3>
+          <p>A Lua.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cartao">
+      <div class="cartao__conteudo">
+        <div class="cartao__conteudo__pergunta">
